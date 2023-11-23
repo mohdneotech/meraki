@@ -6,6 +6,10 @@ The scripts retrieves interacts with the Meraki API to gather data. Follow the s
 
 - Python 3.x installed on your machine.
 - A Meraki API key. You can obtain it from the Meraki Dashboard (https://documentation.meraki.com/General_Administration/Other_Topics/Cisco_Meraki_Dashboard_API).
+- python libraries -> requests, tqdm, tabulate. pip is the package manager for Python (https://pypi.org/project/pip/). Use following command to install for first time or new environment
+   
+   ``` bash
+   pip install <library-name>
 
 ## Usage
 
@@ -26,7 +30,7 @@ The scripts retrieves interacts with the Meraki API to gather data. Follow the s
 
 4. Follow the on-screen prompts to enter your Meraki API key and select the organization, network accordingly.
 
-5. You may store default Meraki API key in the files to store your own key. Saves time. You'll notice the following lines
+5. You may store default Meraki API key in the files to store your own key. Saves time. You'll notice the following lines in include/config.py
 
    ```bash
     DEFAULT_API_KEY = 'STORE-DEFAULT-API-KEY-HERE'
