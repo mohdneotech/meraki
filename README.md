@@ -26,7 +26,10 @@ The scripts retrieves interacts with the Meraki API to gather data. Follow the s
 
 4. Follow the on-screen prompts to enter your Meraki API key and select the organization, network accordingly.
 
-5. You may store default Meraki API key in the files to store your own key. Saves time.
+5. You may store default Meraki API key in the files to store your own key. Saves time. You'll notice the following lines
+
+   ```bash
+    DEFAULT_API_KEY = 'STORE-DEFAULT-API-KEY-HERE'
 
 6. The script will retrieve and display the requested informations based on each script functions.
 
