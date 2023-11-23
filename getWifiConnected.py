@@ -5,12 +5,13 @@
 #               in the selected network and count the number of connected clients for each AP.
 
 import requests
+import include.config as config
 
-# Replace with your default Meraki API key (if you have one)
-DEFAULT_API_KEY = 'STORE-DEFAULT-API-KEY-HERE'
+# Default API key (you can replace this with your default key)
+DEFAULT_API_KEY = config.DEFAULT_API_KEY
 
 # Meraki base URL
-BASE_URL = 'https://api.meraki.com/api/v1'
+BASE_URL = config.BASE_URL
 
 # Function to retrieve a list of organizations
 def get_organizations(api_key):

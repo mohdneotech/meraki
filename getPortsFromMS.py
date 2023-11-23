@@ -7,13 +7,14 @@
 
 import requests
 import json
+import include.config as config
 
 # Default API key (you can replace this with your default key)
-DEFAULT_API_KEY = 'STORE-DEFAULT-API-KEY-HERE'
+DEFAULT_API_KEY = config.DEFAULT_API_KEY
 
 # Function to retrieve a list of organizations
 def get_organizations(api_key):
-    BASE_URL = 'https://api.meraki.com/api/v1'
+    BASE_URL = config.BASE_URL
     url = f'{BASE_URL}/organizations'
     headers = {'X-Cisco-Meraki-API-Key': api_key}
 

@@ -2,9 +2,10 @@
 # description: This script will retrieve switch ports information from Meraki MS devices
 
 import requests
+import include.config as config
 
 # Default API key (you can replace this with your default key)
-DEFAULT_API_KEY = 'STORE-DEFAULT-API-KEY-HERE'
+DEFAULT_API_KEY = config.DEFAULT_API_KEY
 
 # Function to get the organization ID using a specified API key
 def get_organization_id(api_key):

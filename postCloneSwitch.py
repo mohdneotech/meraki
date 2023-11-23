@@ -3,22 +3,23 @@
 
 import requests
 from tqdm import tqdm
+import include.config as config
 
-# Replace with your Meraki API key or use a default key
-DEFAULT_API_KEY = 'STORE-DEFAULT-API-KEY-HERE'
-MERAKI_BASE_URL = 'https://api.meraki.com/api/v1'
+# Default API key (you can replace this with your default key)
+DEFAULT_API_KEY = config.DEFAULT_API_KEY
+BASE_URL = config.BASE_URL
 
 # Function to fetch organizations
 def get_organizations(api_key):
     headers = {'X-Cisco-Meraki-API-Key': api_key}
-    response = requests.get(f'{MERAKI_BASE_URL}/organizations', headers=headers)
+    response = requests.get(f'{BASE_URL}/organizations', headers=headers)
     response.raise_for_status()
     return response.json()
 
 # Function to fetch MS devices (switches) within an organization
 def get_ms_devices(api_key, org_id):
     headers = {'X-Cisco-Meraki-API-Key': api_key}
-    response = requests.get(f'{MERAKI_BASE_URL}/organizations/{org_id}/devices', headers=headers)
+    response = requests.get(f'{BASE_URL}/organizations/{org_id}/devices', headers=headers)
     response.raise_for_status()
     return [device for device in response.json() if device['model'][:2] == 'MS']
 
@@ -39,7 +40,7 @@ def clone_switch(api_key, org_id, source_serial, target_serials):
                     'copySwitchSettings': True,
                 }
 
-                response = requests.post(f'{MERAKI_BASE_URL}/devices/{target_serial}/clone', headers=headers, json=payload)
+                response = requests.post(f'{BASE_URL}/devices/{target_serial}/clone', headers=headers, json=payload)
                 response.raise_for_status()
     else:
         print(f"Source switch with serial {source_serial} not found.")
