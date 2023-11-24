@@ -58,7 +58,7 @@ I created the scripts just in case anybody has same use case to retrieve informa
 If you would like to contribute to this project, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
 
 ## Author
 Mohd NeoTech
